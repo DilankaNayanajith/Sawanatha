@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 MainActivity.super.onBackPressed();
             }
-        }).setNegativeButton("Cancel2",null);
+        }).setNegativeButton("Cancel",null);
         AlertDialog alert = builder.create();
         alert.show();
     }
