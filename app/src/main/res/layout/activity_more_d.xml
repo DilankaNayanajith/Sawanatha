@@ -6,17 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".more_dActivity">
 
-    <android.widget.Toolbar
+    <!--<android.support.v7.widget.Toolbar-->
 
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="@color/colorPrimary"
-        android:title="@string/more_details"
-        android:titleTextColor="@color/colorbtntxt"
-        tools:targetApi="m">
+        <!--android:id="@+id/toolbar"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--&gt;-->
+        <!--<TextView-->
+            <!--android:id="@+id/toolbar_title"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/more_details"-->
+            <!--android:textSize="20sp"-->
+            <!--android:textColor="@color/colorbtntxt"/>-->
 
-    </android.widget.Toolbar>
+    <!--</android.support.v7.widget.Toolbar>-->
 
     <ImageView
         android:id="@+id/image_Hl"
