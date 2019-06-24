@@ -9,9 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_new"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".more_dActivity"></activity>
+
+        <activity
+            android:name=".more_dActivity"
+            android:label="@string/more_details"></activity>
+
         <activity
             android:name=".MainActivity"
+            android:label="@string/hearing_loss"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +24,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>

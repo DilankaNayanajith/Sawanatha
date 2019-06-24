@@ -8,18 +8,18 @@
 
     <!--<android.support.v7.widget.Toolbar-->
 
-        <!--android:id="@+id/toolbar"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="?attr/actionBarSize"-->
-        <!--android:background="@color/colorPrimary"-->
-        <!--&gt;-->
-        <!--<TextView-->
-            <!--android:id="@+id/toolbar_title"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:text="@string/more_details"-->
-            <!--android:textSize="20sp"-->
-            <!--android:textColor="@color/colorbtntxt"/>-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="?attr/actionBarSize"-->
+    <!--android:background="@color/colorPrimary"-->
+    <!--&gt;-->
+    <!--<TextView-->
+    <!--android:id="@+id/toolbar_title"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="@string/more_details"-->
+    <!--android:textSize="20sp"-->
+    <!--android:textColor="@color/colorbtntxt"/>-->
 
     <!--</android.support.v7.widget.Toolbar>-->
 
@@ -28,23 +28,37 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="122dp"
+        android:layout_marginTop="75dp"
         android:src="@drawable/hearing_loss" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txt_about_View"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="65dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="17dp"
         android:text="@string/about_mored"
         android:textColor="@color/colorprimarytxt"
-        android:textSize="8pt"/>
+        android:textSize="8pt" />
 
-
+    <TextView
+        android:id="@+id/txt_hearing_loss_Details"
+        android:layout_width="match_parent"
+        android:layout_height="464dp"
+        android:layout_below="@+id/btn_play"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginBottom="0dp"
+        android:padding="10dp"
+        android:scrollbars="vertical"
+        tools:text="@string/hearing_loss" />
 
 </android.widget.RelativeLayout>

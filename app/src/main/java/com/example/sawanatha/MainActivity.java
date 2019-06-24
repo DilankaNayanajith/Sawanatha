@@ -2,6 +2,7 @@ package com.example.sawanatha;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -10,23 +11,80 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-//import android.widget.Toolbar;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import lecho.lib.hellocharts.model.Axis;
+import lecho.lib.hellocharts.model.AxisValue;
+import lecho.lib.hellocharts.model.Line;
+import lecho.lib.hellocharts.model.LineChartData;
+import lecho.lib.hellocharts.model.PointValue;
+import lecho.lib.hellocharts.model.Viewport;
+import lecho.lib.hellocharts.view.LineChartView;
+
 
 public class MainActivity extends AppCompatActivity {
     private Button button;
-//    Toolbar mActionBarToolbar;
+
+
+    LineChartView lineChartView;
+    int[] axisData = {125,250,500,1000,2000,4000,8000};
+    int[] yAxisData = {30, 40, 35, 45, 30, 25, 30};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        -----------------graph-----------------------------
+        lineChartView = findViewById(R.id.chart);
 
-  //      -------------------Toolbar-------------------------------------
-//        mActionBarToolbar = (Toolbar) findViewById(R.id.toolbar);
-//        mActionBarToolbar.setTitle("Hearing Loss");
-//        mActionBarToolbar.setTitleTextColor(Color.WHITE);
-//        setSupportActionBar(mActionBarToolbar);
+        List yAxisValues = new ArrayList();
+        List axisValues = new ArrayList();
+
+
+        Line line = new Line(yAxisValues).setColor(Color.parseColor("#000000"));
+
+        for (int i = 0; i < axisData.length; i++) {
+            axisValues.add(i, new AxisValue(i).setLabel(String.valueOf(axisData[i])));
+        }
+
+        for (int i =0; i < yAxisData.length; i++) {
+            yAxisValues.add(new PointValue(i, yAxisData[i]));
+        }
+
+        List lines = new ArrayList();
+        lines.add(line);
+
+        LineChartData data = new LineChartData();
+        data.setLines(lines);
+
+        Axis axis = new Axis();
+        axis.setValues(axisValues);
+        axis.setName("f[Hz]");
+        axis.setHasLines(true);
+        axis.setLineColor(Color.parseColor("#000000"));
+        axis.setTextSize(14);
+        axis.setTextColor(Color.parseColor("#009688"));
+        data.setAxisXBottom(axis);
+
+        Axis yAxis = new Axis();
+        yAxis.setName("/[dBHL]");
+        yAxis.setHasLines(true);
+        yAxis.setLineColor(Color.parseColor("#000000"));
+        yAxis.setTextColor(Color.parseColor("#009688"));
+        yAxis.setTextSize(14);
+        data.setAxisYLeft(yAxis);
+
+        lineChartView.setLineChartData(data);
+        Viewport viewport = new Viewport(lineChartView.getMaximumViewport());
+        viewport.top = 120;
+        viewport.bottom=0;
+        lineChartView.setMaximumViewport(viewport);
+        lineChartView.setCurrentViewport(viewport);
+
+//---------------------------------------------------------------------------------------------------
 
         button = (Button) findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +100,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, more_dActivity.class);
         startActivity(intent);
     }
+
+    //-------menu-----------------------------------------------------
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
