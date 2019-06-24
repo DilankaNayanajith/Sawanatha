@@ -24,7 +24,7 @@ import lecho.lib.hellocharts.model.Viewport;
 import lecho.lib.hellocharts.view.LineChartView;
 
 
-public class MainActivity extends AppCompatActivity {
+public class Hearing_loss_main extends AppCompatActivity {
     private Button button;
 
 
@@ -126,11 +126,11 @@ public class MainActivity extends AppCompatActivity {
 //    ---------------back_menu----------------------------------
     @Override
     public void onBackPressed() {
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(Hearing_loss_main.this);
         builder.setMessage("Are you sure you want to exit?").setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                MainActivity.super.onBackPressed();
+                Hearing_loss_main.super.onBackPressed();
             }
         }).setNegativeButton("Cancel",null);
         AlertDialog alert = builder.create();

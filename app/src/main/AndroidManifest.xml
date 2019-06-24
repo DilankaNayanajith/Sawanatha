@@ -15,7 +15,7 @@
             android:label="@string/more_details"></activity>
 
         <activity
-            android:name=".MainActivity"
+            android:name=".Hearing_loss_main"
             android:label="@string/hearing_loss"
             android:screenOrientation="landscape">
             <intent-filter>
